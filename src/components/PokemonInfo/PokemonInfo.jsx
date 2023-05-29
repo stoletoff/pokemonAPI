@@ -42,7 +42,7 @@ export class PokemonInfo extends Component {
           })
           .then(pokemon => this.setState({ pokemon, status: 'resolved' }))
           .catch(error => this.setState({ error, status: 'rejected' }));
-      }, 2000);
+      }, 100000);
     }
   }
   render() {
