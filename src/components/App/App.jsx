@@ -16,7 +16,7 @@ export class App extends Component {
     return (
       <>
         <SearchBar onSubmit={this.handleFormSubmit}></SearchBar>
-        <PokemonInfo></PokemonInfo>
+        <PokemonInfo pokemonName={this.state.pokemonName}></PokemonInfo>
         <ToastContainer autoClose={3000}/>
       </>
     );
