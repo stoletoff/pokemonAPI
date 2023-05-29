@@ -1,19 +1,22 @@
-export default function PokemonCardList({ pokemon: { sprites, name, stats } }) {
-  return (
-    <div>
-      <img
-        src={sprites.other[`official-artwork`].front_default}
-        width="240"
-        alt={name}
-      ></img>
-      <h2>{name}</h2>
-      <ul>
-        {stats.map(entry => (
-          <li key={entry.stat.name}>
-            {entry.stat.name}: {entry.base_stat}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import styled from "styled-components";
+
+export const CardContainer = styled.div`
+display: block;
+text-align: center;
+margin-left: 0 auto;
+margin-right: 0 auto;
+background-color: aliceblue;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+padding-top: 20px;
+height: 100vh;
+`
+
+export const PokemonName = styled.h2`
+padding: 0;
+margin: 0 auto;
+margin-bottom: 15px;
+`
+
+export const Pokemonstatslist = styled.ul`
+padding: 0;
+`

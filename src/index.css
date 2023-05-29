@@ -14,18 +14,21 @@ code {
     monospace;
 }
 
+ul {
+  list-style: none;
+}
+
 .icon-spin {
   margin-right: 10px;
   animation: icon-spin 2s linear infinite;
   fill: red;
-
-  @keyframes icon-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
 }
 
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

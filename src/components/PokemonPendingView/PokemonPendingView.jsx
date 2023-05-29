@@ -1,6 +1,7 @@
 import { FaSpinner } from 'react-icons/fa';
 import PokemonCardList from '../PokemonCardList/PokemonCardList'
 import pendingImage from 'components/img/weight.jpg'
+import { SpinnerWrap } from './PokemonPendingView.styled';
 
 export default function PokemonPendingView({ pokemonName }) {
   const pokemon = {
@@ -16,10 +17,10 @@ export default function PokemonPendingView({ pokemonName }) {
   };
   return (
     <div role="alert">
-      <div>
+      <SpinnerWrap>
         <FaSpinner className="icon-spin" size="32" />
-        Загружаем...
-      </div>
+        <p>Загружаем...</p>
+      </SpinnerWrap>
       <PokemonCardList pokemon={pokemon}/>
     </div>
   );

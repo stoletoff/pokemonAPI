@@ -2,6 +2,7 @@ import { Component } from 'react';
 import PokemonErrorView from 'components/PokemonErrorView/PokemonErrorView';
 import PokemonPendingView from 'components/PokemonPendingView/PokemonPendingView';
 import PokemonCardList from 'components/PokemonCardList/PokemonCardList';
+import { TextWrapper } from './PokemonInfo.styled';
 
 // StateMashine
 // idle - Запроса еще нету
@@ -42,7 +43,7 @@ export class PokemonInfo extends Component {
           })
           .then(pokemon => this.setState({ pokemon, status: 'resolved' }))
           .catch(error => this.setState({ error, status: 'rejected' }));
-      }, 100000);
+      }, 2000);
     }
   }
   render() {
@@ -50,7 +51,7 @@ export class PokemonInfo extends Component {
     const { pokemon, error, status } = this.state;
     const { pokemonName } = this.props;
     if (status === 'idle') {
-      return <div>Введите имя покемона</div>;
+      return <TextWrapper>Пожалуйста, введите имя покемона</TextWrapper>;
     }
 
     if (status === 'pending') {
